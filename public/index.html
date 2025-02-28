@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasaport Başvuru</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="images/ozal-logo2.png" alt="Ozal Logo" class="logo left-logo">
+        <h2 class="university-name">Malatya Turgut Özal Üniversitesi</h2>
+        <img src="images/mtu-logo.png" alt="MTU Logo" class="logo right-logo">
+    </div>
+    <div class="container">
+        <h1>PASAPORT BAŞVURU EKRANI</h1>
+        <form id="passportForm" onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="passportType">Talep Edilen Pasaport Türü:</label>
+                <select id="passportType" name="passportType" required>
+                    <option value="hususi">Hususi (Yeşil) Pasaport</option>
+                    <option value="kirmizi">Diplomatik (Kırmızı) Pasaport</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tcNo">T.C Kimlik No: <span class="required">*</span></label>
+                <input type="text" id="tcNo" name="tcNo" required pattern="[0-9]{11}" maxlength="11" placeholder="11 haneli TC Kimlik No giriniz">
+            </div>
+
+            <div class="form-group">
+                <label for="name">İsim: <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Adınızı giriniz">
+            </div>
+
+            <div class="form-group">
+                <label for="surname">Soyisim: <span class="required">*</span></label>
+                <input type="text" id="surname" name="surname" required placeholder="Soyadınızı giriniz">
+            </div>
+
+            <div class="form-group">
+                <label for="position">Unvan:</label>
+                <input type="text" id="position" name="position" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefon: <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="(5XX) XXX-XXXX">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-Posta: <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="ornek@email.com">
+            </div>
+
+            <div class="form-group">
+                <label for="registryOffice">Başvuru Yapılacak Nüfus Müdürlüğü: <span class="required">*</span></label>
+                <select id="registryOffice" name="registryOffice" required>
+                    <option value="">Seçiniz</option>
+                    <option value="malatya">Malatya Nüfus Müdürlüğü</option>
+                    <option value="kahramanmaras">Kahramanmaraş Nüfus Müdürlüğü</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Kimlik Fotokopisi: <span class="required">*</span></label>
+                <input type="file" id="idCopy" name="idCopy" accept=".pdf" required>
+                <small class="file-info">Sadece PDF formatı kabul edilmektedir.</small>
+            </div>
+
+            <div class="form-group">
+                <label>Kimlik Fotokopisi (Eş):</label>
+                <input type="file" id="spouseIdCopy" name="spouseIdCopy" accept=".pdf">
+                <small class="file-info">Sadece PDF formatı kabul edilmektedir.</small>
+            </div>
+
+            <button type="submit" class="submit-btn">Başvuru Yap</button>
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html> 
